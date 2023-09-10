@@ -3,34 +3,24 @@ from rest_framework.response import Response
 from .models import Person
 from .serializers import PersonSerializer
 from rest_framework import status
+from django.shortcuts import get_object_or_404
 
-@api_view(['GET', 'POST', 'PUT', 'DELETE'])
-def person_api_view(request):
+
+
+@api_view(['GET'])
+def get_person_by_id(request, user_id):
     if request.method == 'GET':
-        # Retrieve details of a person by either name or ID
-        name = request.query_params.get('name', None)
-        person_id = request.query_params.get('id', None)
+        try:
+            person = Person.objects.get(pk=user_id)
+            serializer = PersonSerializer(person)
+            return Response(serializer.data)
+        except Person.DoesNotExist:
+            return Response({'error': 'Person not found'}, status=status.HTTP_404_NOT_FOUND)
 
-        if name is not None:
-            # Search by name
-            try:
-                person = Person.objects.get(name=name)
-                serializer = PersonSerializer(person)
-                return Response(serializer.data)
-            except Person.DoesNotExist:
-                return Response({'error': 'Person not found'}, status=status.HTTP_404_NOT_FOUND)
-        elif person_id is not None:
-            # Search by ID
-            try:
-                person = Person.objects.get(pk=person_id)
-                serializer = PersonSerializer(person)
-                return Response(serializer.data)
-            except Person.DoesNotExist:
-                return Response({'error': 'Person not found'}, status=status.HTTP_404_NOT_FOUND)
-        else:
-            return Response({'error': 'Please provide either "name" or "id" as a query parameter'}, status=status.HTTP_400_BAD_REQUEST)
+@api_view(['POST', 'PUT', 'DELETE'])
+def person_api_view(request):
 
-    elif request.method == 'POST':
+    if request.method == 'POST':
         # CREATE operation
         name = request.data.get('name', '')
 
