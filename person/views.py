@@ -67,7 +67,7 @@ def person_api_view(request):
             return Response({'error': 'The "name" field should be a string.'}, status=status.HTTP_400_BAD_REQUEST)
 
         # Check if the updated name is the same as any existing name
-        if Person.objects.exclude(pk=id).filter(name=updated_name).exists():
+        if Person.objects.filter(name=updated_name).exists():
             return Response({'error': 'A person with the updated name already exists.'}, status=status.HTTP_400_BAD_REQUEST)
 
         serializer = PersonSerializer(person, data={'name': updated_name})

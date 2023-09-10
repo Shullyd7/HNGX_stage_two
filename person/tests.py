@@ -1,7 +1,7 @@
 import requests
 
 # Base URL for the API
-base_url = 'http://127.0.0.1:8000/api'
+base_url = 'https://stagetwo.onrender.com/api'
 
 # Function to print response content and status
 def print_response(response):
