@@ -19,16 +19,10 @@ Welcome to the Person API documentation. This document provides information abou
 
 ### Read (GET)
 
-**Retrieve by Name:**
-
-- Method: GET
-- Endpoint: `https://stagetwo.onrender.com/api?name=<person_name>`
-- Response Format: JSON containing person details.
-
 **Retrieve by ID:**
 
 - Method: GET
-- Endpoint: `https://stagetwo.onrender.com/api?id=<person_id>`
+- Endpoint: `https://stagetwo.onrender.com/api/<user_id>`
 - Response Format: JSON containing person details.
 
 ### Update (PUT)
@@ -82,29 +76,12 @@ curl -X POST -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https
 
 ### Read (GET)
 
-**Retrieve by Name:**
-
-**Example Request:**
-
-```bash
-curl https://stagetwo.onrender.com/api?name=John Doe
-```
-
-**Expected Response (JSON):**
-
-```json
-{
-  "id": 1,
-  "name": "John Doe"
-}
-```
-
 **Retrieve by ID:**
 
 **Example Request:**
 
 ```bash
-curl https://stagetwo.onrender.com/api?id=1
+curl https://stagetwo.onrender.com/api/1
 ```
 
 **Expected Response (JSON):**

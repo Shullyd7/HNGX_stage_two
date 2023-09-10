@@ -66,22 +66,16 @@ curl -X POST -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https
 
 ### Read (GET)
 
-To retrieve details of a person, you can use either their name or ID. Send a GET request to one of the following endpoints:
-
-- Retrieve by Name:
-  - Endpoint: `https://stagetwo.onrender.com/api?name=John Doe`
+To retrieve details of a person, you can use the ID. Send a GET request to one of the following endpoints:
 
 - Retrieve by ID (replace `1` with the actual person ID):
-  - Endpoint: `https://stagetwo.onrender.com/api?id=1`
+  - Endpoint: `https://stagetwo.onrender.com/api/1`
 
 Example:
 
 ```bash
-# Retrieve by Name
-curl https://stagetwo.onrender.com/api?name=John Doe
-
 # Retrieve by ID
-curl https://stagetwo.onrender.com/api?id=1
+curl https://stagetwo.onrender.com/api/1
 ```
 
 ### Update (PUT)
