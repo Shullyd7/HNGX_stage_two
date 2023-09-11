@@ -1,6 +1,3 @@
-I've updated your README.md file according to your views. It now provides clear instructions on setting up the project, accessing the API, and using its endpoints. Please feel free to use this updated README.md:
-
-```markdown
 # Person API
 
 The **Person API** is a simple Django application that allows you to manage a list of people. You can perform CRUD (Create, Read, Update, Delete) operations on person records.
