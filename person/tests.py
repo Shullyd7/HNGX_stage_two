@@ -1,6 +1,6 @@
 import requests
 
-# Base URL for the API
+# Base URL for the API on your local development server
 base_url = 'https://stagetwo.onrender.com/api'
 
 # Function to print response content and status
@@ -14,23 +14,20 @@ response = requests.post(base_url, data=create_data)
 print("CREATE (POST) Operation:")
 print_response(response)
 
-# READ (GET) - Fetch details of a person by name
-read_params = {'name': 'Mark Essien'}
-response = requests.get(base_url, params=read_params)
-print("\nREAD (GET) Operation (Fetch details of a person by name):")
+# READ (GET) - Fetch details of a person by ID
+person_id = response.json().get('id')
+read_url = f'{base_url}/{person_id}'
+response = requests.get(read_url)
+print("\nREAD (GET) Operation (Fetch details of a person by ID):")
 print_response(response)
 
-# Get the person's ID from the previous response
-person_id = response.json()['id']
-
 # UPDATE (PUT) - Modify the details of an existing person
-update_data = {'id': person_id, 'name': 'Essien Mark'}
-response = requests.put(base_url, data=update_data)
+update_data = {'name': 'Essien Mark'}
+response = requests.put(read_url, data=update_data)
 print("\nUPDATE (PUT) Operation (Modify the details of an existing person):")
 print_response(response)
 
 # DELETE - Remove a person by ID
-delete_data = {'id': person_id}
-response = requests.delete(base_url, data=delete_data)
+response = requests.delete(read_url)
 print("\nDELETE Operation (Remove a person by ID):")
 print_response(response)

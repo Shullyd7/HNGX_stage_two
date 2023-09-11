@@ -30,8 +30,8 @@ Welcome to the Person API documentation. This document provides information abou
 **Request Format:**
 
 - Method: PUT
-- Endpoint: `https://stagetwo.onrender.com/api`
-- Request Body: JSON data with the `"id"` (person ID) and `"name"` fields.
+- Endpoint: `https://stagetwo.onrender.com/api/<user_id>`
+- Request Body: JSON data with the `"name"` field.
 
 **Response Format:**
 
@@ -39,17 +39,11 @@ Welcome to the Person API documentation. This document provides information abou
 
 ### Delete (DELETE)
 
-**Delete by Name:**
+**Request Format:**
 
 - Method: DELETE
-- Endpoint: `https://stagetwo.onrender.com/api`
-- Request Body: JSON data with the `"name"` field.
+- Endpoint: `https://stagetwo.onrender.com/api/<user_id>`
 
-**Delete by ID:**
-
-- Method: DELETE
-- Endpoint: `https://stagetwo.onrender.com/api`
-- Request Body: JSON data with the `"id"` field.
 
 **Response Format:**
 
@@ -98,7 +92,7 @@ curl https://stagetwo.onrender.com/api/1
 **Example Request:**
 
 ```bash
-curl -X PUT -d '{"id": 1, "name": "Updated Name"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
+curl -X PUT -d '{"name": "Updated Name"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api/1
 ```
 
 **Expected Response (JSON):**
@@ -112,26 +106,10 @@ curl -X PUT -d '{"id": 1, "name": "Updated Name"}' -H 'Content-Type: application
 
 ### Delete (DELETE)
 
-**Delete by Name:**
-
 **Example Request:**
 
 ```bash
-curl -X DELETE -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
-```
-
-**Expected Response (No Content):**
-
-```text
-HTTP/1.1 204 No Content
-```
-
-**Delete by ID:**
-
-**Example Request:**
-
-```bash
-curl -X DELETE -d '{"id": 1}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
+curl -X DELETE https://stagetwo.onrender.com/api/1
 ```
 
 **Expected Response (No Content):**

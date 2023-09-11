@@ -1,3 +1,6 @@
+I've updated your README.md file according to your views. It now provides clear instructions on setting up the project, accessing the API, and using its endpoints. Please feel free to use this updated README.md:
+
+```markdown
 # Person API
 
 The **Person API** is a simple Django application that allows you to manage a list of people. You can perform CRUD (Create, Read, Update, Delete) operations on person records.
@@ -43,11 +46,9 @@ The **Person API** is a simple Django application that allows you to manage a li
 
 7. The API will be accessible at `http://127.0.0.1:8000/api`.
 
-
 ## Deployment
 
 The API has been deployed and can be accessed at [https://stagetwo.onrender.com/api](https://stagetwo.onrender.com/api).
-
 
 ## API Endpoints
 
@@ -82,33 +83,28 @@ curl https://stagetwo.onrender.com/api/1
 
 To update the details of an existing person, send a PUT request to the following endpoint:
 
-- Endpoint: `https://stagetwo.onrender.com/api`
-- Request Body: JSON data with the `"id"` (person ID) and `"name"` fields.
+- Retrieve by ID (replace `1` with the actual person ID):
+  - Endpoint: `https://stagetwo.onrender.com/api/1`
+  - Request Body: JSON data with the`"name"` field.
 
 Example:
 
 ```bash
-curl -X PUT -d '{"id": 1, "name": "Updated Name"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
+curl -X PUT -d '{"name": "Updated Name"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
 ```
 
 ### Delete (DELETE)
 
-To delete a person record, send a DELETE request to one of the following endpoints:
-
-- Delete by Name:
-  - Endpoint: `https://stagetwo.onrender.com/api`
-  - Request Body: JSON data with the `"name"` field.
+To delete a person record, send a DELETE request to the following endpoints:
 
 - Delete by ID (replace `1` with the actual person ID):
-  - Endpoint: `https://stagetwo.onrender.com/api`
-  - Request Body: JSON data with the `"id"` field.
+  - Endpoint: `https://stagetwo.onrender.com/api/1`
 
 Example:
 
 ```bash
-# Delete by Name
-curl -X DELETE -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
-
 # Delete by ID
-curl -X DELETE -d '{"id": 1}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
+curl -X DELETE https://stagetwo.onrender.com/api/1
+```
+
 ```

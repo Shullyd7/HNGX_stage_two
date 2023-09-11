@@ -17,11 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from person.views import person_api_view, get_person_by_id
-
+from person.views import get_person_by_id, person_api_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/<int:user_id>', get_person_by_id, name='get_person_by_id'),
     path('api', person_api_view, name='person_api'),
-    path('api/<int:user_id>/', get_person_by_id, name='get_person_by_id'),
 ]
