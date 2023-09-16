@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://stagetwo.onrender.com/api/21",
+					"raw": "https://stagetwo.onrender.com/resources/21",
 					"protocol": "https",
 					"host": [
 						"stagetwo",
@@ -20,7 +20,7 @@
 						"com"
 					],
 					"path": [
-						"api",
+						"resources",
 						"21"
 					]
 				}
@@ -43,7 +43,7 @@
 					"raw": "{\r\n    \"name\": \"Ruth\"\r\n}"
 				},
 				"url": {
-					"raw": "https://stagetwo.onrender.com/api",
+					"raw": "https://stagetwo.onrender.com/resources",
 					"protocol": "https",
 					"host": [
 						"stagetwo",
@@ -51,7 +51,7 @@
 						"com"
 					],
 					"path": [
-						"api"
+						"resources"
 					]
 				}
 			},
@@ -73,7 +73,7 @@
 					"raw": "{\r\n    \"name\": \"Jude\"\r\n}"
 				},
 				"url": {
-					"raw": "https://stagetwo.onrender.com/api/21",
+					"raw": "https://stagetwo.onrender.com/resources/21",
 					"protocol": "https",
 					"host": [
 						"stagetwo",
@@ -81,7 +81,7 @@
 						"com"
 					],
 					"path": [
-						"api",
+						"resources",
 						"21"
 					]
 				}
@@ -94,7 +94,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://stagetwo.onrender.com/api/29",
+					"raw": "https://stagetwo.onrender.com/resources/29",
 					"protocol": "https",
 					"host": [
 						"stagetwo",
@@ -102,7 +102,7 @@
 						"com"
 					],
 					"path": [
-						"api",
+						"resources",
 						"29"
 					]
 				}
@@ -115,7 +115,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://stagetwo.onrender.com/api",
+					"raw": "https://stagetwo.onrender.com/resources",
 					"protocol": "https",
 					"host": [
 						"stagetwo",
@@ -123,7 +123,7 @@
 						"com"
 					],
 					"path": [
-						"api"
+						"resources"
 					]
 				}
 			},
