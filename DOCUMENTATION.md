@@ -1,6 +1,6 @@
-# Person API Documentation
+# CRUD API Documentation
 
-Welcome to the Person API documentation. This document provides information about the API's endpoints, request and response formats, sample usage, known limitations, and setup instructions.
+Welcome to the CRUD API documentation. This document provides information about the API's endpoints, request and response formats, sample usage, known limitations, and setup instructions.
 
 ## Endpoints
 
@@ -9,7 +9,7 @@ Welcome to the Person API documentation. This document provides information abou
 **Request Format:**
 
 - Method: POST
-- Endpoint: `https://stagetwo.onrender.com/api`
+- Endpoint: `https://stagetwo.onrender.com/resources`
 - Request Body: JSON data with the `"name"` field.
 
 **Response Format:**
@@ -22,7 +22,7 @@ Welcome to the Person API documentation. This document provides information abou
 **Retrieve by ID:**
 
 - Method: GET
-- Endpoint: `https://stagetwo.onrender.com/api/<user_id>`
+- Endpoint: `https://stagetwo.onrender.com/resources/<user_id>`
 - Response Format: JSON containing person details.
 
 ### Get All Users (GET)
@@ -30,7 +30,7 @@ Welcome to the Person API documentation. This document provides information abou
 **Request Format:**
 
 - Method: GET
-- Endpoint: `https://stagetwo.onrender.com/api`
+- Endpoint: `https://stagetwo.onrender.com/resources`
 - Response Format: JSON Response: An array of user objects, each containing user details.
 
 ### Update (PUT)
@@ -38,7 +38,7 @@ Welcome to the Person API documentation. This document provides information abou
 **Request Format:**
 
 - Method: PUT
-- Endpoint: `https://stagetwo.onrender.com/api/<user_id>`
+- Endpoint: `https://stagetwo.onrender.com/resources/<user_id>`
 - Request Body: JSON data with the `"name"` field.
 
 **Response Format:**
@@ -50,7 +50,7 @@ Welcome to the Person API documentation. This document provides information abou
 **Request Format:**
 
 - Method: DELETE
-- Endpoint: `https://stagetwo.onrender.com/api/<user_id>`
+- Endpoint: `https://stagetwo.onrender.com/resources/<user_id>`
 
 
 **Response Format:**
@@ -64,7 +64,7 @@ Welcome to the Person API documentation. This document provides information abou
 **Example Request:**
 
 ```bash
-curl -X POST -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
+curl -X POST -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/resources
 ```
 
 **Expected Response (JSON):**
@@ -83,7 +83,7 @@ curl -X POST -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https
 **Example Request:**
 
 ```bash
-curl https://stagetwo.onrender.com/api/1
+curl https://stagetwo.onrender.com/resources/1
 ```
 
 **Expected Response (JSON):**
@@ -100,7 +100,7 @@ curl https://stagetwo.onrender.com/api/1
 **Example Request:**
 
 ```bash
-curl https://stagetwo.onrender.com/api
+curl https://stagetwo.onrender.com/resources
 ```
 
 **Expected Response (JSON):**
@@ -123,7 +123,7 @@ curl https://stagetwo.onrender.com/api
 **Example Request:**
 
 ```bash
-curl -X PUT -d '{"name": "Updated Name"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api/1
+curl -X PUT -d '{"name": "Updated Name"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/resources/1
 ```
 
 **Expected Response (JSON):**
@@ -140,7 +140,7 @@ curl -X PUT -d '{"name": "Updated Name"}' -H 'Content-Type: application/json' ht
 **Example Request:**
 
 ```bash
-curl -X DELETE https://stagetwo.onrender.com/api/1
+curl -X DELETE https://stagetwo.onrender.com/resources/1
 ```
 
 **Expected Response (No Content):**
@@ -193,7 +193,7 @@ HTTP/1.1 204 No Content
    python manage.py runserver
    ```
 
-7. The API will be accessible at `http://127.0.0.1:8000/api`.
+7. The API will be accessible at `http://127.0.0.1:8000/resources`.
 
 ## Running Tests
 

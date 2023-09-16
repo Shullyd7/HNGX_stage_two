@@ -21,6 +21,6 @@ from person.views import get_person_by_id, person_api_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/<int:user_id>', get_person_by_id, name='get_person_by_id'),
-    path('api', person_api_view, name='person_api'),
+    path('resources/<int:user_id>', get_person_by_id, name='get_person_by_id'),
+    path('resources', person_api_view, name='person_api'),
 ]

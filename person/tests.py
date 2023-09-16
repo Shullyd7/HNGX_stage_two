@@ -2,7 +2,7 @@
 import requests
 
 # Base URL for the API on your local development server
-base_url = 'https://stagetwo.onrender.com/api'
+base_url = 'https://stagetwo.onrender.com/resources'
 
 # Function to print response content and status
 def print_response(response):
