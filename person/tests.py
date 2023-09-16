@@ -1,3 +1,4 @@
+# Import the requests library at the beginning of your script
 import requests
 
 # Base URL for the API on your local development server
@@ -30,4 +31,10 @@ print_response(response)
 # DELETE - Remove a person by ID
 response = requests.delete(read_url)
 print("\nDELETE Operation (Remove a person by ID):")
+print_response(response)
+
+# GET ALL USERS (GET)
+all_users_url = f'{base_url}'  # URL for the "Get all users" API
+response = requests.get(all_users_url)
+print("\nGET ALL USERS Operation:")
 print_response(response)

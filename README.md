@@ -62,9 +62,21 @@ Example:
 curl -X POST -d '{"name": "John Doe"}' -H 'Content-Type: application/json' https://stagetwo.onrender.com/api
 ```
 
+### Get All Users (GET)
+
+To retrieve details of all persons. Send a GET request the following endpoint:
+
+- Endpoint: `https://stagetwo.onrender.com/api`
+
+Example:
+
+```bash
+curl https://stagetwo.onrender.com/api
+```
+
 ### Read (GET)
 
-To retrieve details of a person, you can use the ID. Send a GET request to one of the following endpoints:
+To retrieve details of a person, you can use the ID. Send a GET request to the following endpoints:
 
 - Retrieve by ID (replace `1` with the actual person ID):
   - Endpoint: `https://stagetwo.onrender.com/api/1`
